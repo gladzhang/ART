@@ -58,7 +58,7 @@ Note that you can put other benchmark datasets in `/datasets` and change YML fil
 1. We provide some testing data in `/datasets`. Due to the limited space of github, we provide our completed trained model through this link ([net_g_ART_jpeg40](https://ufile.io/l3mt29ss)). You should download it and place it in 'experiments' in advance.
 2. Follow the instructions below to begin testing our ART model.
 ```bash
-# ART model for JPEG CAR. You can find corresponding results in Table 5 of the submitted paper.
+# ART model for JPEG CAR. You can find corresponding results in Table 5 of the main paper.
 python basicsr/test.py -opt options/test/test_art_jpeg40.yml
 ```
 
