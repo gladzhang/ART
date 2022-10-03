@@ -19,9 +19,9 @@ pip install basicsr
 1. We provide some testing data in `/datasets`. Note that we put the pretrained models in `/experiments`, which can be downloaded. Make sure that you have downloaded them before testing. 
 2. Follow the instructions below to begin testing our ART model.
 ```bash
-# ART model for (x2) image SR. You can find corresponding results in Table 2 of the submitted paper.
+# ART model for (x2) image SR. You can find corresponding results in Table 2 of the main paper.
 python basicsr/test.py -opt options/test/test_ART_W8I4_500k_DF2K_x2.yml
-# ART-S model for (x2) image SR. You can find corresponding results in Table 2 of the submitted paper.
+# ART-S model for (x2) image SR. You can find corresponding results in Table 2 of the main paper.
 python basicsr/test.py -opt options/test/test_ART_W8I8_500k_DF2K_x2.yml
 ```
 You can find the visual results in automatically generated file folder `/results`. 
@@ -32,7 +32,7 @@ Note that you can put other benchmark datasets in `/datasets` and change YML fil
 1. We provide some testing data in `/datasets`. Due to the limited space of github, we provide our completed trained model through this link ([net_g_ART_denoising15](https://ufile.io/x9dkndr3)). You should download it and place it in 'experiments' in advance.
 2. Follow the instructions below to begin testing our ART model.
 ```bash
-# ART model for Color Image Denoising. You can find corresponding results in Table 4 of the submitted paper.
+# ART model for Color Image Denoising. You can find corresponding results in Table 4 of the main paper.
 python basicsr/test.py -opt options/test/test_art_denoising15.yml
 ```
 
