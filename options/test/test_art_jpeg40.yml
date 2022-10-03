@@ -1,0 +1,59 @@
+name: ART_car_jpeg40_P126_DFBW_B2G4_1600k
+model_type: ARTModel
+scale: 1
+num_gpu: 1
+manual_seed: 0
+
+datasets:
+  test_1:
+    task: CAR
+    name: Classic5
+    type: PairedImageDataset_Master
+    dataroot_gt: datasets/classic5/Classic5_HQ
+    dataroot_lq: datasets/classic5/Classic5_LQ/40
+    filename_tmpl: '{}'
+    io_backend:
+      type: disk
+
+
+# network structures
+network_g:
+  type: ART
+  upscale: 1
+  in_chans: 1
+  img_size: 126
+  window_size: 7
+  img_range: 255.
+  depths: [6, 6, 6, 6, 6, 6]
+  interval: [18, 18, 13, 13, 7, 7]
+  embed_dim: 180
+  num_heads: [6, 6, 6, 6, 6, 6]
+  mlp_ratio: 4
+
+
+# path
+path:
+  pretrain_network_g: experiments/net_g_ART_jpeg40.pth
+  strict_load_g: true
+
+# validation settings
+val:
+  save_img: false
+  suffix: ~  # add suffix to saved images, if None, use exp name
+  selfensemble_testing: false
+  patchwise_testing: false
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 0
+      test_y_channel: true
+    ssim:
+      type: calculate_ssim
+      crop_border: 0
+      test_y_channel: true
+#    psnrb:
+#      type: calculate_psnrb
+#      crop_border: 0
+#      test_y_channel: true
+
