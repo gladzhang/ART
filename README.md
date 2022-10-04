@@ -57,7 +57,7 @@ pip install basicsr
 - We provide the performance on Urban100 (x4, SR), Urban100 (level=50, Color-DN) LIVE1 (q=10, CAR), and SIDD (Real-DN). We use the input 160 × 160 to calculate FLOPS.
 - Download  the models and put them into the folder `experiments/pretrained_models`  . Go to the folder to find details of directory structure.
 
-## Testing Datasets
+## Datasets
 
 
 Used training and testing sets can be downloaded as follows:
