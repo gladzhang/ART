@@ -1,7 +1,7 @@
 close all;clear all;
 
 denoised = load('./results/Real_Denoising/SIDD/mat/Idenoised.mat');
-gt = load('../datasets/SIDD/ValidationGtBlocksSrgb.mat');
+gt = load('../datasets/RealDN/SIDD/ValidationGtBlocksSrgb.mat');
 
 denoised = denoised.Idenoised;
 gt = gt.ValidationGtBlocksSrgb;
