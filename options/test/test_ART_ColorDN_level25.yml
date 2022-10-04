@@ -1,0 +1,86 @@
+name: ART_denoising25_P128_DFBW_B2G4
+model_type: ARTModel
+scale: 1
+num_gpu: 1
+manual_seed: 0
+
+datasets:
+  test_1:
+    task: denoising_color
+    name: CBSD68
+    type: PairedImageDataset_Master
+    dataroot_gt: datasets/ColorDN/CBSD68HQ
+    dataroot_lq: datasets/ColorDN/CBSD68HQ
+    filename_tmpl: '{}'
+    noise: 25 # 15/25/50
+    io_backend:
+      type: disk
+  
+  test_2:
+    task: denoising_color
+    name: Kodak24
+    type: PairedImageDataset_Master
+    dataroot_gt: datasets/ColorDN/Kodak24HQ
+    dataroot_lq: datasets/ColorDN/Kodak24HQ
+    filename_tmpl: '{}'
+    noise: 25 # 15/25/50
+    io_backend:
+      type: disk
+  
+  test_3:
+    task: denoising_color
+    name: McMaster
+    type: PairedImageDataset_Master
+    dataroot_gt: datasets/ColorDN/McMasterHQ
+    dataroot_lq: datasets/ColorDN/McMasterHQ
+    filename_tmpl: '{}'
+    noise: 25 # 15/25/50
+    io_backend:
+      type: disk
+  
+  test_4:
+    task: denoising_color
+    name: Urban100
+    type: PairedImageDataset_Master
+    dataroot_gt: datasets/ColorDN/Urban100HQ
+    dataroot_lq: datasets/ColorDN/Urban100HQ
+    filename_tmpl: '{}'
+    noise: 25 # 15/25/50
+    io_backend:
+      type: disk
+
+# network structures
+network_g:
+  type: ART
+  upscale: 1
+  in_chans: 3
+  img_size: 128
+  window_size: 8
+  img_range: 255.
+  depths: [6, 6, 6, 6, 6, 6]
+  interval: [16, 16, 12, 12, 8, 8]
+  embed_dim: 180
+  num_heads: [6, 6, 6, 6, 6, 6]
+  mlp_ratio: 4
+
+
+# path
+path:
+  pretrain_network_g: experiments/pretrained_models/ColorDN_ART_level25.pth
+
+# validation settings
+val:
+  save_img: false
+  suffix: ~  # add suffix to saved images, if None, use exp name
+  selfensemble_testing: false
+  patchwise_testing: false
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 0
+      test_y_channel: false
+    ssim:
+      type: calculate_ssim
+      crop_border: 0
+      test_y_channel: false
