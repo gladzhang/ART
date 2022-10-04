@@ -56,7 +56,7 @@ network_g:
   in_chans: 3
   img_size: 128
   window_size: 8
-  img_range: 255.
+  img_range: 1.
   depths: [6, 6, 6, 6, 6, 6]
   interval: [16, 16, 12, 12, 8, 8]
   embed_dim: 180
