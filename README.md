@@ -41,7 +41,7 @@ pip install basicsr
 1. [Datasets](#Datasets)
 1. [Testing](#Testing)
 1. [Results](#Results)
-1. [Acknowledgement](#Acknowledgement)
+1. [Acknowledgements](#Acknowledgements)
 
 ---
 ## Models
@@ -57,7 +57,7 @@ pip install basicsr
 - We provide the performance on Urban100 (x4, SR), Urban100 (level=50, Color-DN) LIVE1 (q=10, CAR), and SIDD (Real-DN). We use the input 160 × 160 to calculate FLOPS.
 - Download  the models and put them into the folder `experiments/pretrained_models`  . Go to the folder to find details of directory structure.
 
-## Datasets
+## Testing Datasets
 
 
 Used training and testing sets can be downloaded as follows:
@@ -137,7 +137,7 @@ We provide the quantitative results on image SR, color image denoising, real ima
 - Results of Table 2 in the main paper
 
 <p align="center">
-  <img width="900" src="figs/SR_ART.png">
+  <img width="900" src="figs/SR.png">
 </p>
 
 </details>
@@ -148,7 +148,7 @@ We provide the quantitative results on image SR, color image denoising, real ima
 - Results of Table 4 in the main paper
 
 <p align="center">
-  <img width="900" src="figs/ColorDN_ART.png">
+  <img width="900" src="figs/ColorDN.png">
 </p>
 
 </details>
@@ -159,7 +159,7 @@ We provide the quantitative results on image SR, color image denoising, real ima
 - Results of Table 7 in the main paper
 
 <p align="center">
-  <img width="900" src="figs/RealDN_ART.png">
+  <img width="900" src="figs/RealDN.png">
 </p>
 
 </details>
@@ -170,11 +170,11 @@ We provide the quantitative results on image SR, color image denoising, real ima
 - Results of Table 5 in the main paper
 
 <p align="center">
-  <img width="900" src="figs/CAR_ART.png">
+  <img width="900" src="figs/CAR.png">
 </p>
 
 </details>
 
-## Acknowledgement
+## License and Acknowledgement
 This work is released under the Apache 2.0 license.
  The codes are based on [BasicSR](https://github.com/xinntao/BasicSR). Please also follow their licenses. Thanks for their awesome works.
