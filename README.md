@@ -1,7 +1,11 @@
 # Accurate Image Restoration with Attention Retractable Transformer
+Jiale Zhang, Yulun Zhang, Jinjin Gu, Yongbing Zhang, Linghe Kong, and Xin Yuan, "Accurate Image Restoration with Attention Retractable Transformer", 2022
+
+---
 This code is the PyTorch implementation of ART model. Our ART achieves **state-of-the-art** performance in
 - bicubic image SR
 - color image denoising
+- real image denoising
 - jpeg compression artifact reduction
 
 > **Abstract:** *Recently, Transformer-based image restoration networks have achieved promising improvements over convolutional neural networks due to parameter-independent global interactions. To lower computational cost, existing works generally limit self-attention computation within non-overlapping windows. However, each group of tokens are always from a dense area of the image. This is considered as a dense attention strategy since the interactions of tokens are restrained in dense regions. Obviously, this strategy could result in restricted receptive fields. To address this issue, we propose \textbf{A}ttention \textbf{R}etractable \textbf{T}ransformer (ART) for image restoration, which presents both dense and sparse attention modules in the network. The sparse attention module allows tokens from sparse areas to interact and thus provides a wider receptive field. Furthermore, the alternating application of dense and sparse attention modules greatly enhances representation ability of Transformer while providing retractable attention on the input image.We conduct extensive experiments on image super-resolution, denoising, and JPEG compression artifact reduction tasks. Experimental results validate that our proposed ART outperforms state-of-the-art methods on various benchmark datasets both quantitatively and visually. We also provide code and models at https://github.com/gladzhang/ART.* 
@@ -16,11 +20,21 @@ This code is the PyTorch implementation of ART model. Our ART achieves **state-o
 - timm
 - NVIDIA GPU + [CUDA](https://developer.nvidia.com/cuda-downloads)
 
-## Install BasicSR
+### Install BasicSR
 You should install BasicSR from PyPI in advance. More details are [here](https://github.com/XPixelGroup/BasicSR/blob/master/INSTALL.md).
 ```bash
+git clone https://github.com/gladzhang/ART.git
 pip install basicsr
 ```
+
+## TODO
+
+* [x] Testing on Image SR
+* [x] Testing on Color Image Denoising
+* [x] Testing on Real Image Denoising 
+* [x] Testing on JPEG compression artifact reduction
+* [ ] Training
+* [ ] More tasks
 ## Contents
 
 1. [Models](#Models)
