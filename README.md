@@ -1,5 +1,5 @@
 # Accurate Image Restoration with Attention Retractable Transformer
-Jiale Zhang, Yulun Zhang, Jinjin Gu, Yongbing Zhang, Linghe Kong, and Xin Yuan, "Accurate Image Restoration with Attention Retractable Transformer", 2022
+Jiale Zhang, [Yulun Zhang](http://yulunzhang.com/), [Jinjin Gu](https://www.jasongt.com/), [Yongbing Zhang](https://shinning0821.github.io/index.html), [Linghe Kong](https://www.cs.sjtu.edu.cn/~linghe.kong/), and [Xin Yuan](https://xygroup6.github.io/xygroup/), "Accurate Image Restoration with Attention Retractable Transformer", 2022
 
 [paper] [[vidual results](https://drive.google.com/drive/folders/1b92XHwxuvBLOAiHAjWe-VFKN01hQUiO_?usp=sharing)] [[pretrained models](https://github.com/gladzhang/ART#Models)]
 
