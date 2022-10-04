@@ -41,7 +41,7 @@ pip install basicsr
 1. [Datasets](#Datasets)
 1. [Testing](#Testing)
 1. [Results](#Results)
-1. [Acknowledgements](#License and Acknowledgement)
+1. [Acknowledgement](#Acknowledgement)
 
 ---
 ## Models
@@ -175,6 +175,6 @@ We provide the quantitative results on image SR, color image denoising, real ima
 
 </details>
 
-## License and Acknowledgement
+## Acknowledgement
 This work is released under the Apache 2.0 license.
  The codes are based on [BasicSR](https://github.com/xinntao/BasicSR). Please also follow their licenses. Thanks for their awesome works.
