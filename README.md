@@ -85,8 +85,7 @@ python basicsr/test.py -opt options/test/test_ART_SR_x4.yml
 python basicsr/test.py -opt options/test/test_ART_S_SR_x2.yml
 python basicsr/test.py -opt options/test/test_ART_S_SR_x3.yml
 python basicsr/test.py -opt options/test/test_ART_S_SR_x4.yml
-```
-You can find the visual results in automatically generated file folder `/results`. 
+``` 
 
 ### Test on Color Image Denoising
 1.  Please download the corresponding testing datasets and put them in the folder `datasets\ColorDN`. Download the corresponding models and put them in the folder `experiments\pretrained_models`. 
@@ -98,7 +97,6 @@ python basicsr/test.py -opt options/test/test_ART_ColorDN_level25.yml
 python basicsr/test.py -opt options/test/test_ART_ColorDN_level50.yml
 ```
 
-Note that you can put other benchmark datasets in `/datasets` and change YML files for further test.
 
 ### Test on RealDenoising
 1. Download the [SIDD test](https://drive.google.com/file/d/11vfqV-lqousZTuAit1Qkqghiv_taY0KZ/view) and place it in '/datasets/SIDD'.  Download the corresponding models and put them in the folder `experiments\pretrained_models`. 
