@@ -1,6 +1,8 @@
 # Accurate Image Restoration with Attention Retractable Transformer
 Jiale Zhang, Yulun Zhang, Jinjin Gu, Yongbing Zhang, Linghe Kong, and Xin Yuan, "Accurate Image Restoration with Attention Retractable Transformer", 2022
+
 [paper] [[vidual results](https://drive.google.com/drive/folders/1b92XHwxuvBLOAiHAjWe-VFKN01hQUiO_?usp=sharing)] [pretrained models]
+
 ---
 This code is the PyTorch implementation of ART model. Our ART achieves **state-of-the-art** performance in
 - bicubic image SR
