@@ -18,7 +18,7 @@ This code is the PyTorch implementation of ART model. Our ART achieves **state-o
 ## Requirements
 - python 3.8
 - pyTorch >= 1.8.0
-- [BasicSR V1.3.5](https://github.com/xinntao/BasicSR)
+- [BasicSR V1.4.2](https://github.com/xinntao/BasicSR)
 - timm
 - NVIDIA GPU + [CUDA](https://developer.nvidia.com/cuda-downloads)
 
