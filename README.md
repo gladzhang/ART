@@ -76,6 +76,7 @@ Download  testing datasets and put them into the folder `datasets/`  . Go to the
 
 ## Testing
 ### Test on SR
+#### Test with ground-truth images
 1. Please download the corresponding testing datasets and put them in the folder `datasets\SR`. Download the corresponding models and put them in the folder `experiments\pretrained_models`. 
 2. Follow the instructions below to begin testing our ART model.
 ```bash
@@ -87,6 +88,14 @@ python basicsr/test.py -opt options/test/test_ART_SR_x4.yml
 python basicsr/test.py -opt options/test/test_ART_S_SR_x2.yml
 python basicsr/test.py -opt options/test/test_ART_S_SR_x3.yml
 python basicsr/test.py -opt options/test/test_ART_S_SR_x4.yml
+``` 
+#### Test without ground-truth images
+1. Please upload the images that need to be upscaled, and put them in the folder `datasets\example`. Download the corresponding models and put them in the folder `experiments\pretrained_models`. 
+2. Choose the upscale size and follow the instructions below to apply our ART model to upscale the provided images.
+```bash
+python basicsr/test.py -opt options/apply/test_ART_SR_x2_without_groundTruth.yml
+python basicsr/test.py -opt options/apply/test_ART_SR_x3_without_groundTruth.yml
+python basicsr/test.py -opt options/apply/test_ART_SR_x4_without_groundTruth.yml
 ``` 
 
 ### Test on Color Image Denoising
