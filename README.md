@@ -97,6 +97,7 @@ python basicsr/test.py -opt options/apply/test_ART_SR_x2_without_groundTruth.yml
 python basicsr/test.py -opt options/apply/test_ART_SR_x3_without_groundTruth.yml
 python basicsr/test.py -opt options/apply/test_ART_SR_x4_without_groundTruth.yml
 ``` 
+Run the script then you can find the output visual results in the automatically generated folder `results`.
 
 ### Test on Color Image Denoising
 1.  Please download the corresponding testing datasets and put them in the folder `datasets\ColorDN`. Download the corresponding models and put them in the folder `experiments\pretrained_models`. 
