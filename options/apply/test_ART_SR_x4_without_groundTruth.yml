@@ -1,0 +1,42 @@
+# general settings
+name: x4
+model_type: ARTModel
+scale: 4
+num_gpu: 1
+manual_seed: 10
+
+datasets:
+  test_1:  # the 1st test dataset
+    name: example  # replace it with your upload data folder
+    type: SingleImageDataset_Master
+    dataroot_lq: datasets/example  # replace it with the path of your provided datasets
+    io_backend:
+      type: disk
+
+
+
+# network structures
+network_g:
+  type: ART
+  upscale: 4
+  in_chans: 3
+  img_size: 64
+  window_size: 8
+  img_range: 1.
+  depths: [6, 6, 6, 6, 6, 6]
+  interval: [4, 4, 4, 4, 4, 4]
+  embed_dim: 180
+  num_heads: [6, 6, 6, 6, 6, 6]
+  mlp_ratio: 4
+  upsampler: 'pixelshuffle'
+  resi_connection: '1conv'
+
+# path
+path:
+  pretrain_network_g: experiments/pretrained_models/SR_ART_x4.pth
+  strict_load_g: true
+
+# validation settings
+val:
+  save_img: true
+  suffix: ~  # add suffix to saved images, if None, use exp name
