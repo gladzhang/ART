@@ -1,7 +1,7 @@
 # Accurate Image Restoration with Attention Retractable Transformer
 Jiale Zhang, [Yulun Zhang](http://yulunzhang.com/), [Jinjin Gu](https://www.jasongt.com/), [Yongbing Zhang](https://shinning0821.github.io/index.html), [Linghe Kong](https://www.cs.sjtu.edu.cn/~linghe.kong/), and [Xin Yuan](https://xygroup6.github.io/xygroup/), "Accurate Image Restoration with Attention Retractable Transformer", arXiv, 2022
 
-[[paper](https://arxiv.org/abs/2210.01427)] [[vidual results](https://drive.google.com/drive/folders/1b92XHwxuvBLOAiHAjWe-VFKN01hQUiO_?usp=sharing)] [[pretrained models](https://github.com/gladzhang/ART#Models)]
+[[paper](https://arxiv.org/abs/2210.01427v2)] [[vidual results](https://drive.google.com/drive/folders/1b92XHwxuvBLOAiHAjWe-VFKN01hQUiO_?usp=sharing)] [[pretrained models](https://github.com/gladzhang/ART#Models)]
 
 ---
 This code is the PyTorch implementation of ART model. Our ART achieves **state-of-the-art** performance in
