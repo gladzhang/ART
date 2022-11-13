@@ -185,6 +185,18 @@ We provide the quantitative results on image SR, color image denoising, real ima
 
 </details>
 
+## Citation
+
+If you find the code helpful in your resarch or work, please cite the following paper(s).
+```
+@article{zhang2022accurate,
+  title={Accurate Image Restoration with Attention Retractable Transformer},
+  author={Zhang, Jiale and Zhang, Yulun and Gu, Jinjin and Zhang, Yongbing and Kong, Linghe and Yuan, Xin},
+  journal={arXiv preprint arXiv:2210.01427},
+  year={2022}
+}
+```
+
 ## License and Acknowledgement
 This work is released under the Apache 2.0 license.
  The codes are based on [BasicSR](https://github.com/xinntao/BasicSR). Please also follow their licenses. Thanks for their awesome works.
