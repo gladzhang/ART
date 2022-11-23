@@ -1,7 +1,7 @@
 # Accurate Image Restoration with Attention Retractable Transformer
 Jiale Zhang, [Yulun Zhang](http://yulunzhang.com/), [Jinjin Gu](https://www.jasongt.com/), [Yongbing Zhang](https://shinning0821.github.io/index.html), [Linghe Kong](https://www.cs.sjtu.edu.cn/~linghe.kong/), and [Xin Yuan](https://xygroup6.github.io/xygroup/), "Accurate Image Restoration with Attention Retractable Transformer", arXiv, 2022
 
-[[paper](https://arxiv.org/abs/2210.01427v3)] [[vidual results](https://drive.google.com/drive/folders/1b92XHwxuvBLOAiHAjWe-VFKN01hQUiO_?usp=sharing)] [[pretrained models](https://github.com/gladzhang/ART#Models)]
+[[paper](https://arxiv.org/abs/2210.01427v3)] [[vidual results](https://drive.google.com/drive/folders/1b92XHwxuvBLOAiHAjWe-VFKN01hQUiO_?usp=sharing)] [[pretrained models](https://drive.google.com/drive/folders/1Sn1sl577Lwancj5SuQtRJk-GwUTRw7lK?usp=share_link)]
 
 ---
 This code is the PyTorch implementation of ART model. Our ART achieves **state-of-the-art** performance in
@@ -68,8 +68,8 @@ Used training and testing sets can be downloaded as follows:
 | :-------------------------------------------- | :----------------------------------------------------------: |
 | image SR                                       | Set5 + Set14 + BSD100 + Urban100 + Manga109 [[download](https://drive.google.com/file/d/1n-7pmwjP0isZBK7w3tx2y8CTastlABx1/view?usp=sharing)] | 
 |color image denoising                          |  CBSD68 + Kodak24 + McMaster + Urban100  [[download](https://drive.google.com/file/d/1baLpOjNlTCNbREUDAZf9Lso6YCeUOQER/view?usp=sharing)]|
-| real image denoising                          | [SIDD](https://drive.google.com/file/d/11vfqV-lqousZTuAit1Qkqghiv_taY0KZ/view?usp=sharing) + [DND](https://drive.google.com/file/d/1CYCDhaVxYYcXhSfEVDUwkvJDtGxeQ10G/view?usp=sharing) |
-| grayscale JPEG compression artifact reduction  | Classic5 + LIVE1 + Urban100 [[download](https://drive.google.com/file/d/1KJ1ArYxRubRAWP1VgONf6rly1DwiRnzZ/view?usp=sharing)] |
+| real image denoising                          | SIDD + DND [[download](https://drive.google.com/file/d/1Vuu0uhm_-PAG-5UPI0bPIaEjSfrSvsTO/view?usp=share_link)] |
+| grayscale JPEG compression artifact reduction  | Classic5 + LIVE1 [[download](https://drive.google.com/file/d/1KJ1ArYxRubRAWP1VgONf6rly1DwiRnzZ/view?usp=sharing)] |
 
 
 Download  testing datasets and put them into the folder `datasets/`  . Go to the folder to find details of directory structure.
@@ -77,7 +77,7 @@ Download  testing datasets and put them into the folder `datasets/`  . Go to the
 ## Testing
 ### Test on SR
 #### Test with ground-truth images
-1. Please download the corresponding testing datasets and put them in the folder `datasets\SR`. Download the corresponding models and put them in the folder `experiments\pretrained_models`. 
+1. Please download the corresponding testing datasets and put them in the folder `datasets/SR`. Download the corresponding models and put them in the folder `experiments/pretrained_models`. 
 2. Follow the instructions below to begin testing our ART model.
 ```bash
 # ART model for image SR. You can find corresponding results in Table 2 of the main paper.
@@ -90,7 +90,7 @@ python basicsr/test.py -opt options/test/test_ART_S_SR_x3.yml
 python basicsr/test.py -opt options/test/test_ART_S_SR_x4.yml
 ``` 
 #### Test without ground-truth images
-1. Please upload the images that need to be upscaled, and put them in the folder `datasets\example`. Download the corresponding models and put them in the folder `experiments\pretrained_models`. 
+1. Please upload the images that need to be upscaled, and put them in the folder `datasets/example`. Download the corresponding models and put them in the folder `experiments/pretrained_models`. 
 2. Choose the upscale size and follow the instructions below to apply our ART model to upscale the provided images.
 ```bash
 python basicsr/test.py -opt options/apply/test_ART_SR_x2_without_groundTruth.yml
@@ -100,7 +100,7 @@ python basicsr/test.py -opt options/apply/test_ART_SR_x4_without_groundTruth.yml
 Run the script then you can find the output visual results in the automatically generated folder `results`.
 
 ### Test on Color Image Denoising
-1.  Please download the corresponding testing datasets and put them in the folder `datasets\ColorDN`. Download the corresponding models and put them in the folder `experiments\pretrained_models`. 
+1.  Please download the corresponding testing datasets and put them in the folder `datasets/ColorDN`. Download the corresponding models and put them in the folder `experiments/pretrained_models`. 
 2. Follow the instructions below to begin testing our ART model.
 ```bash
 # ART model for Color Image Denoising. You can find corresponding results in Table 4 of the main paper.
@@ -111,7 +111,7 @@ python basicsr/test.py -opt options/test/test_ART_ColorDN_level50.yml
 
 
 ### Test on RealDenoising
-1. Download the [SIDD test](https://drive.google.com/file/d/11vfqV-lqousZTuAit1Qkqghiv_taY0KZ/view) and place it in '/datasets/SIDD'.  Download the corresponding models and put them in the folder `experiments\pretrained_models`. 
+1. Download the [SIDD test](https://drive.google.com/file/d/11vfqV-lqousZTuAit1Qkqghiv_taY0KZ/view) and place it in '/datasets/SIDD'.  Download the corresponding models and put them in the folder `experiments/pretrained_models`. 
 2. Go to folder 'realDenoising'. Follow the instructions below to test our ART model. The output is in 'realDenoising/results/Real_Denoising'/SIDD.
 
    ```bash
@@ -128,7 +128,7 @@ python basicsr/test.py -opt options/test/test_ART_ColorDN_level50.yml
    ```
 
 ### Test on JPEG Compression Artifact Reduction
-1.  Please download the corresponding testing datasets and put them in the folder `datasets\CAR`. Download the corresponding models and put them in the folder `experiments\pretrained_models`. 
+1.  Please download the corresponding testing datasets and put them in the folder `datasets/CAR`. Download the corresponding models and put them in the folder `experiments/pretrained_models`. 
 2. Follow the instructions below to begin testing our ART model.
 ```bash
 # ART model for JPEG CAR. You can find corresponding results in Table 5 of the main paper.
