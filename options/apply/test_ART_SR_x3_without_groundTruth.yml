@@ -8,7 +8,7 @@ manual_seed: 10
 datasets:
   test_1:  # the 1st test dataset
     name: example  # replace it with your upload data folder
-    type: SingleImageDataset_Master
+    type: SingleImageDataset
     dataroot_lq: datasets/example  # replace it with the path of your provided datasets
     io_backend:
       type: disk

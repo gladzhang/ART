@@ -1,4 +1,4 @@
-name: ART_denoising15_P128_DFBW_B2G4
+name: test_ART_ColorDN_level15
 model_type: ARTModel
 scale: 1
 num_gpu: 1
@@ -8,7 +8,7 @@ datasets:
   test_1:
     task: denoising_color
     name: CBSD68
-    type: PairedImageDataset_Master
+    type: PairedImageDataset
     dataroot_gt: datasets/ColorDN/CBSD68HQ
     dataroot_lq: datasets/ColorDN/CBSD68HQ
     filename_tmpl: '{}'
@@ -19,7 +19,7 @@ datasets:
   test_2:
     task: denoising_color
     name: Kodak24
-    type: PairedImageDataset_Master
+    type: PairedImageDataset
     dataroot_gt: datasets/ColorDN/Kodak24HQ
     dataroot_lq: datasets/ColorDN/Kodak24HQ
     filename_tmpl: '{}'
@@ -30,7 +30,7 @@ datasets:
   test_3:
     task: denoising_color
     name: McMaster
-    type: PairedImageDataset_Master
+    type: PairedImageDataset
     dataroot_gt: datasets/ColorDN/McMasterHQ
     dataroot_lq: datasets/ColorDN/McMasterHQ
     filename_tmpl: '{}'
@@ -41,7 +41,7 @@ datasets:
   test_4:
     task: denoising_color
     name: Urban100
-    type: PairedImageDataset_Master
+    type: PairedImageDataset
     dataroot_gt: datasets/ColorDN/Urban100HQ
     dataroot_lq: datasets/ColorDN/Urban100HQ
     filename_tmpl: '{}'

@@ -6,14 +6,15 @@ from tqdm import tqdm
 import torch
 import torch.nn as nn
 
-from artunet_arch import ARTUNet
+from basicsr.models.archs.artunet_arch import ARTUNet
 import scipy.io as sio
 
-parser = argparse.ArgumentParser(description='Real Image Denoising using Restormer')
+parser = argparse.ArgumentParser(description='Real Image Denoising')
 
 parser.add_argument('--input_dir', default='../datasets/RealDN/SIDD/', type=str, help='Directory of validation images')
 parser.add_argument('--result_dir', default='./results/Real_Denoising/SIDD/', type=str, help='Directory for results')
 parser.add_argument('--weights', default='../experiments/pretrained_models/RealDN_ART.pth', type=str, help='Path to weights')
+parser.add_argument('--save_images', action='store_true', help='Save denoised images in result directory')
 
 args = parser.parse_args()
 
@@ -42,6 +43,9 @@ s = x.pop('type')
 result_dir_mat = os.path.join(args.result_dir, 'mat')
 os.makedirs(result_dir_mat, exist_ok=True)
 
+if args.save_images:
+  result_dir_png = os.path.join(args.result_dir, 'png')
+  os.makedirs(result_dir_png, exist_ok=True)
 
 model_restoration = ARTUNet(**x)
 
@@ -65,6 +69,10 @@ with torch.no_grad():
             restored_patch = model_restoration(noisy_patch)
             restored_patch = torch.clamp(restored_patch,0,1).cpu().detach().permute(0, 2, 3, 1).squeeze(0)
             restored[i,k,:,:,:] = restored_patch
+
+            if args.save_images:
+                save_file = os.path.join(result_dir_png, '%04d_%02d.png'%(i+1,k+1))
+                utils.save_img(save_file, img_as_ubyte(restored_patch))
 
 # save denoised data
 sio.savemat(os.path.join(result_dir_mat, 'Idenoised.mat'), {"Idenoised": restored,})

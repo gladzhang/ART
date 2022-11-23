@@ -1,2 +1,0 @@
-- We put the training log of CrossFormer on image SR (x2) here. The model file can be found in `basicsr/archs/crossformer_arch.py`. The experiment is corresponding to the results in Tab. 6 in Appendix part of the main paper.
-- Please download the trained models from the provided links and put them in `experiments/pretrained_models`.

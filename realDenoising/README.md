@@ -1,0 +1,3 @@
+For real image denoising task, we make two differences when compared to other tasks. Firstly, we design our ART model with the U-net structure, which is similar with Restormer. You can find the model file at `basicsr/models/archs/artunet_arch.py`. Secondly, we train our ART under the same training settings with Restormer, which means that we use the same [BasicSR](https://github.com/xinntao/BasicSR) environment (v1.2.0) and progressive training strategy. Therefore, we can make fair comparisons with Restormer.
+
+Note that this folder is built basd on [Restormer](https://github.com/swz30/Restormer). Thanks for their awesome works.

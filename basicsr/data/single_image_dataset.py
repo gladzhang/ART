@@ -3,17 +3,21 @@ from torch.utils import data as data
 from torchvision.transforms.functional import normalize
 
 from basicsr.data.data_util import paths_from_lmdb
-from basicsr.utils import FileClient, imfrombytes, img2tensor, rgb2ycbcr, scandir
+from basicsr.utils import FileClient, imfrombytes, img2tensor, scandir
+from basicsr.utils.matlab_functions import rgb2ycbcr
 from basicsr.utils.registry import DATASET_REGISTRY
 
 
 @DATASET_REGISTRY.register()
-class SingleImageDataset_Master(data.Dataset):
+class SingleImageDataset(data.Dataset):
     """Read only lq images in the test phase.
+
     Read LQ (Low Quality, e.g. LR (Low Resolution), blurry, noisy, etc).
+
     There are two modes:
     1. 'meta_info_file': Use meta information file to generate paths.
     2. 'folder': Scan folders to generate paths.
+
     Args:
         opt (dict): Config for train datasets. It contains the following keys:
             dataroot_lq (str): Data root path for lq.
@@ -22,7 +26,7 @@ class SingleImageDataset_Master(data.Dataset):
     """
 
     def __init__(self, opt):
-        super(SingleImageDataset_Master, self).__init__()
+        super(SingleImageDataset, self).__init__()
         self.opt = opt
         # file client (io backend)
         self.file_client = None

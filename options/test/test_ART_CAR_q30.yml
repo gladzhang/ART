@@ -1,4 +1,4 @@
-name: ART_car_jpeg30_P126_DFBW_B2G4
+name: test_ART_CAR_q30
 model_type: ARTModel
 scale: 1
 num_gpu: 1
@@ -8,7 +8,7 @@ datasets:
   test_1:
     task: CAR
     name: Classic5
-    type: PairedImageDataset_Master
+    type: PairedImageDataset
     dataroot_gt: datasets/CAR/classic5/Classic5_HQ
     dataroot_lq: datasets/CAR/classic5/Classic5_LQ/30
     filename_tmpl: '{}'
@@ -18,7 +18,7 @@ datasets:
   test_2:
     task: CAR
     name: LIVE1
-    type: PairedImageDataset_Master
+    type: PairedImageDataset
     dataroot_gt: datasets/CAR/LIVE1/LIVE1_HQ
     dataroot_lq: datasets/CAR/LIVE1/LIVE1_LQ/30
     filename_tmpl: '{}'

@@ -1,15 +1,16 @@
 from torch.utils import data as data
 from torchvision.transforms.functional import normalize
 
-from .data_util import paired_paths_from_folder, paired_paths_from_lmdb, paired_paths_from_meta_info_file
+from basicsr.data.data_util import paired_paths_from_folder, paired_paths_from_lmdb, paired_paths_from_meta_info_file
 from basicsr.data.transforms import augment, paired_random_crop
-from basicsr.utils import FileClient, imfrombytes, img2tensor, bgr2ycbcr
+from basicsr.utils import FileClient, imfrombytes, img2tensor
+from basicsr.utils.matlab_functions import rgb2ycbcr
 from basicsr.utils.registry import DATASET_REGISTRY
 
 import numpy as np
 
 @DATASET_REGISTRY.register()
-class PairedImageDataset_Master(data.Dataset):
+class PairedImageDataset(data.Dataset):
     """Paired image dataset for image restoration.
 
     Read LQ (Low Quality, e.g. LR (Low Resolution), blurry, noisy, etc) and GT image pairs.
@@ -39,7 +40,7 @@ class PairedImageDataset_Master(data.Dataset):
     """
 
     def __init__(self, opt):
-        super(PairedImageDataset_Master, self).__init__()
+        super(PairedImageDataset, self).__init__()
         self.opt = opt
         # file client (io backend)
         self.file_client = None
@@ -83,8 +84,25 @@ class PairedImageDataset_Master(data.Dataset):
             img_bytes = self.file_client.get(lq_path, 'lq')
             img_lq = imfrombytes(img_bytes, flag='grayscale', float32=False)
             img_gt = np.expand_dims(img_gt, axis=2).astype(np.float32) / 255.
-            img_lq = np.expand_dims(img_lq, axis=2).astype(np.float32) / 255.  # narray(H, W) -> narray(H,W,1)
-        elif self.task == 'denoising_color' :
+            img_lq = np.expand_dims(img_lq, axis=2).astype(np.float32) / 255.
+    
+        elif self.task == 'denoising_gray': # Matlab + OpenCV version
+            gt_path = self.paths[index]['gt_path']
+            lq_path = gt_path
+            img_bytes = self.file_client.get(gt_path, 'gt')
+            # OpenCV version, following "Deep Convolutional Dictionary Learning for Image Denoising"
+            img_gt = imfrombytes(img_bytes, flag='grayscale', float32=True)
+            # # Matlab version (using this version may have 0.6dB improvement, which is unfair for comparison)
+            # img_gt = imfrombytes(img_bytes, flag='unchanged', float32=True)
+            # if img_gt.ndim != 2:
+            #     img_gt = rgb2ycbcr(cv2.cvtColor(img_gt, cv2.COLOR_BGR2RGB), y_only=True)
+            if self.opt['phase'] != 'train':
+                np.random.seed(seed=0)
+            img_lq = img_gt + np.random.normal(0, self.noise/255., img_gt.shape)
+            img_gt = np.expand_dims(img_gt, axis=2)
+            img_lq = np.expand_dims(img_lq, axis=2)
+
+        elif self.task == 'denoising_color':
             gt_path = self.paths[index]['gt_path']
             lq_path = gt_path
             img_bytes = self.file_client.get(gt_path, 'gt')
@@ -92,6 +110,7 @@ class PairedImageDataset_Master(data.Dataset):
             if self.opt['phase'] != 'train':
                 np.random.seed(seed=0)
             img_lq = img_gt + np.random.normal(0, self.noise/255., img_gt.shape)
+
         else:
             # image range: [0, 1], float32., H W 3
             gt_path = self.paths[index]['gt_path']
@@ -111,8 +130,8 @@ class PairedImageDataset_Master(data.Dataset):
 
         # color space transform
         if 'color' in self.opt and self.opt['color'] == 'y':
-            img_gt = bgr2ycbcr(img_gt, y_only=True)[..., None]
-            img_lq = bgr2ycbcr(img_lq, y_only=True)[..., None]
+            img_gt = rgb2ycbcr(img_gt, y_only=True)[..., None]
+            img_lq = rgb2ycbcr(img_lq, y_only=True)[..., None]
 
         # crop the unmatched GT images during validation or testing, especially for SR benchmark datasets
         # TODO: It is better to update the datasets, rather than force to crop
@@ -125,8 +144,6 @@ class PairedImageDataset_Master(data.Dataset):
         if self.mean is not None or self.std is not None:
             normalize(img_lq, self.mean, self.std, inplace=True)
             normalize(img_gt, self.mean, self.std, inplace=True)
-
-        # print(img_lq.shape,img_gt.shape,img_lq.min(),img_gt.min(),img_lq.max(),img_gt.max(),lq_path,gt_path)
 
         return {'lq': img_lq, 'gt': img_gt, 'lq_path': lq_path, 'gt_path': gt_path}
 

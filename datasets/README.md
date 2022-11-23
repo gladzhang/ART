@@ -1,8 +1,33 @@
-For testing, we provide the directory structure. You can download the complete datasets and put thme here. 
+For training and testing, we provide the directory structure. You can download the complete datasets and put thme here. 
 
 ```shell
 |-- datasets
-    # image SR
+    # image SR - train
+    |-- DF2K
+        |-- HR
+        |-- LR_bicubic
+            |-- X2
+            |-- X3
+            |-- X4
+    # color image denoising - train
+    |-- DFWB_RGB
+        |-- HQ
+    # real image denoising - train & val
+    |-- SIDD
+        |-- train
+            |-- target_crops
+            |-- input_crops  
+        |-- val
+            |-- target_crops
+            |-- input_crops 
+    # grayscale JPEG compression artifact reduction - train
+    |-- DFWB_CAR
+        |-- HQ
+        |-- LQ
+            |-- 10
+            |-- 30
+            |-- 40  
+    # image SR - test
     |-- SR
         |-- Set5
             |-- HR
@@ -34,12 +59,13 @@ For testing, we provide the directory structure. You can download the complete d
                 |-- X2
                 |-- X3
                 |-- X4        
-        # real image denoising - test
+    # gaussian color image denoising - test
     |-- ColorDN
         |-- CBSD68HQ
         |-- Kodak24HQ
         |-- McMasterHQ
         |-- Urban100HQ
+    # real image denoising - test
     |-- RealDN
         |-- SIDD
             |-- ValidationGtBlocksSrgb.mat
@@ -51,7 +77,7 @@ For testing, we provide the directory structure. You can download the complete d
                 |-- 0002.mat
                 ：  
                 |-- 0050.mat
-    # grayscale JPEG compression artifact reduction - train & test
+    # grayscale JPEG compression artifact reduction - test
     |-- CAR
         |-- classic5
             |-- Classic5_HQ
