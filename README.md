@@ -1,7 +1,7 @@
 # Accurate Image Restoration with Attention Retractable Transformer
 Jiale Zhang, [Yulun Zhang](http://yulunzhang.com/), [Jinjin Gu](https://www.jasongt.com/), [Yongbing Zhang](https://shinning0821.github.io/index.html), [Linghe Kong](https://www.cs.sjtu.edu.cn/~linghe.kong/), and [Xin Yuan](https://xygroup6.github.io/xygroup/), "Accurate Image Restoration with Attention Retractable Transformer", arXiv, 2022
 
-[[paper](https://arxiv.org/abs/2210.01427v3)] [[vidual results](https://drive.google.com/drive/folders/1b92XHwxuvBLOAiHAjWe-VFKN01hQUiO_?usp=sharing)] [[pretrained models](https://drive.google.com/drive/folders/1Sn1sl577Lwancj5SuQtRJk-GwUTRw7lK?usp=share_link)]
+[[paper(arXiv)](https://arxiv.org/abs/2210.01427v3)] [[visual results](https://drive.google.com/drive/folders/1b92XHwxuvBLOAiHAjWe-VFKN01hQUiO_?usp=sharing)] [[pretrained models](https://drive.google.com/drive/folders/1Sn1sl577Lwancj5SuQtRJk-GwUTRw7lK?usp=share_link)]
 
 ---
 This code is the PyTorch implementation of ART model. Our ART achieves **state-of-the-art** performance in
@@ -16,7 +16,7 @@ This code is the PyTorch implementation of ART model. Our ART achieves **state-o
 > <img width="800" src="figs/git.png">
 > </p>
 
-|                          *img_92 (x4)*                           |                          *img_98 (x4)*                           |                          *HR*                           |                          *LR*                           |*SwinIR*                           |*ART (ours)*                           |
+|                          *img_092 (x4)*                           |                          *img_098 (x4)*                           |                          *HR*                           |                          *LR*                           |*SwinIR*                           |*ART (ours)*                           |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |:----------------------------------------------------------: |:----------------------------------------------------------: |
 | <img src="figs/Resize_ComL_img_092_HR_x4.png"  height=110 width=135> | <img src="figs/Resize_ComL_img_098_HR_x4.png"  height=110 width=135> | <img src="figs/ComS_img_092_HR_x4.png" width=101 height=51> <img src="figs/ComS_img_098_HR_x4.png" width=101 height=51> | <img src="figs/ComS_img_092_Bicubic_x4.png" width=101 height=51> <img src="figs/ComS_img_098_Bicubic_x4.png" width=101 height=51> | <img src="figs/ComS_img_092_SwinIR_x4.png" width=101 height=51> <img src="figs/ComS_img_098_SwinIR_x4.png" width=101 height=51> |<img src="figs/ComS_img_092_ART_x4.png" width=101 height=51> <img src="figs/ComS_img_098_ART_x4.png" width=101 height=51> |
 
