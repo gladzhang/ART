@@ -120,7 +120,7 @@ Download  training and testing datasets and put them into the folder `datasets/`
     python -m torch.distributed.launch --nproc_per_node=8 --master_port=2414 basicsr/train.py -opt options/train_ART_RealDN.yml --launcher pytorch
     ```
     Run the script then you can find the generated experimental logs in the folder `realDenoising/experiments`.
-3. Remerber to go back to the original environment if you finish all the training or testing about real image denoising task. This is a friendly hint in order to prevent confusion in the training environment.
+3. Remember to go back to the original environment if you finish all the training or testing about real image denoising task. This is a friendly hint in order to prevent confusion in the training environment.
     ```bash
     # Tips here. Go back to the original environment (BasicSRv1.3.5) after finishing all the training or testing about real image denoising. 
     cd ..
