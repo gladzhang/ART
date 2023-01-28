@@ -1,5 +1,5 @@
 # Accurate Image Restoration with Attention Retractable Transformer
-Jiale Zhang, [Yulun Zhang](http://yulunzhang.com/), [Jinjin Gu](https://www.jasongt.com/), [Yongbing Zhang](https://shinning0821.github.io/index.html), [Linghe Kong](https://www.cs.sjtu.edu.cn/~linghe.kong/), and [Xin Yuan](https://xygroup6.github.io/xygroup/), "Accurate Image Restoration with Attention Retractable Transformer", arXiv, 2022
+Jiale Zhang, [Yulun Zhang](http://yulunzhang.com/), [Jinjin Gu](https://www.jasongt.com/), [Yongbing Zhang](https://shinning0821.github.io/index.html), [Linghe Kong](https://www.cs.sjtu.edu.cn/~linghe.kong/), and [Xin Yuan](https://xygroup6.github.io/xygroup/), "Accurate Image Restoration with Attention Retractable Transformer", ICLR, 2023 (Spotlight)
 
 [[paper(arXiv)](https://arxiv.org/abs/2210.01427v3)] [[visual results](https://drive.google.com/drive/folders/1b92XHwxuvBLOAiHAjWe-VFKN01hQUiO_?usp=sharing)] [[pretrained models](https://drive.google.com/drive/folders/1Sn1sl577Lwancj5SuQtRJk-GwUTRw7lK?usp=share_link)]
 
@@ -279,11 +279,11 @@ We provide the results on image SR, color image denoising, real image denoising,
 
 If you find the code helpful in your resarch or work, please cite the following paper(s).
 ```
-@article{zhang2022accurate,
+@inproceedings{zhang2022accurate,
   title={Accurate Image Restoration with Attention Retractable Transformer},
   author={Zhang, Jiale and Zhang, Yulun and Gu, Jinjin and Zhang, Yongbing and Kong, Linghe and Yuan, Xin},
-  journal={arXiv preprint arXiv:2210.01427},
-  year={2022}
+  booktitle={ICLR},
+  year={2023}
 }
 ```
 
