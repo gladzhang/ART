@@ -279,7 +279,7 @@ We provide the results on image SR, color image denoising, real image denoising,
 
 If you find the code helpful in your resarch or work, please cite the following paper(s).
 ```
-@inproceedings{zhang2022accurate,
+@inproceedings{zhang2023accurate,
   title={Accurate Image Restoration with Attention Retractable Transformer},
   author={Zhang, Jiale and Zhang, Yulun and Gu, Jinjin and Zhang, Yongbing and Kong, Linghe and Yuan, Xin},
   booktitle={ICLR},
